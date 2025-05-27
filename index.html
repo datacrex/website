@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DATACREX - Software Solutions</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <header>
@@ -20,8 +21,9 @@
   </header>
 
   <section class="hero">
+    <div class="overlay"></div>
     <div class="container">
-      <h2>Building Reliable & Scalable Software Solutions</h2>
+      <h2>Reliable & Scalable Software Solutions</h2>
       <p>We help startups and enterprises bring their ideas to life with powerful technology.</p>
       <a href="#contact" class="btn">Get in Touch</a>
     </div>
@@ -32,14 +34,17 @@
       <h3>Our Services</h3>
       <div class="grid">
         <div class="card">
+          <i class="fas fa-code fa-2x"></i>
           <h4>Web Development</h4>
           <p>Modern websites & web apps using React, FastAPI, Django, and more.</p>
         </div>
         <div class="card">
+          <i class="fas fa-mobile-alt fa-2x"></i>
           <h4>Mobile Apps</h4>
           <p>Cross-platform mobile apps using React Native and Flutter.</p>
         </div>
         <div class="card">
+          <i class="fas fa-robot fa-2x"></i>
           <h4>AI & Automation</h4>
           <p>Custom AI solutions and workflow automation tailored for your business.</p>
         </div>
@@ -50,18 +55,23 @@
   <section id="portfolio" class="section dark">
     <div class="container">
       <h3>Recent Projects</h3>
-      <div class="grid">
-        <div class="card">
-          <h4>E-Commerce App</h4>
-          <p>Scalable online store built with FastAPI and Vue.js.</p>
-        </div>
-        <div class="card">
-          <h4>Healthcare Staffing Platform</h4>
-          <p>Robust Django-based platform with complex scheduling logic.</p>
-        </div>
-        <div class="card">
-          <h4>Trading Automation System</h4>
-          <p>Algo-trading platform integrated with real-time APIs and WebSockets.</p>
+      <div class="carousel">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <img src="https://source.unsplash.com/800x500/?ecommerce" alt="E-Commerce App">
+            <h4>E-Commerce App</h4>
+            <p>Scalable online store built with FastAPI and Vue.js.</p>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://source.unsplash.com/800x500/?healthcare" alt="Healthcare Platform">
+            <h4>Healthcare Staffing Platform</h4>
+            <p>Robust Django-based platform with complex scheduling logic.</p>
+          </div>
+          <div class="carousel-slide">
+            <img src="https://source.unsplash.com/800x500/?trading" alt="Trading Automation">
+            <h4>Trading Automation System</h4>
+            <p>Algo-trading platform integrated with real-time APIs and WebSockets.</p>
+          </div>
         </div>
       </div>
     </div>
