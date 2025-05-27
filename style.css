@@ -1,94 +1,48 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #fff;
-  color: #333;
-}
-
-header {
-  background: #222;
-  color: white;
-  padding: 1rem 0;
-}
-
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1000px;
-  margin: auto;
-  padding: 0 1rem;
-}
-
-nav a {
-  color: white;
-  margin-left: 1rem;
-  text-decoration: none;
-}
-
 .hero {
-  background: #0a74da;
+  background: url('https://source.unsplash.com/1600x800/?technology,team') no-repeat center center/cover;
   color: white;
-  padding: 4rem 1rem;
+  padding: 6rem 1rem;
+  text-align: center;
+  position: relative;
+}
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%; width: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 0;
+}
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.card i {
+  margin-bottom: 0.5rem;
+  color: #0a74da;
+}
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+}
+.carousel-track {
+  display: flex;
+  animation: scroll 15s linear infinite;
+}
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
   text-align: center;
 }
-
-.section {
-  padding: 3rem 1rem;
-}
-
-.dark {
-  background: #f4f4f4;
-}
-
-.container {
-  max-width: 1000px;
-  margin: auto;
-}
-
-h1, h2, h3, h4 {
-  margin: 0 0 1rem;
-}
-
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.card {
-  flex: 1 1 30%;
-  background: white;
-  padding: 1rem;
+.carousel-slide img {
+  width: 100%;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-input, textarea {
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button.btn, a.btn {
-  background: #0a74da;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.2rem;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #222;
-  color: white;
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-300%); }
 }
