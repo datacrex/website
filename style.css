@@ -1,9 +1,35 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  color: #333;
+  background: #fff;
+}
+header {
+  background: #0a74da;
+  color: #fff;
+  padding: 1rem 0;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+header nav a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+}
 .hero {
-  background: url('https://source.unsplash.com/1600x800/?technology,team') no-repeat center center/cover;
+  background: url('images/hero-background.jpg') no-repeat center center/cover;
   color: white;
   padding: 6rem 1rem;
   text-align: center;
   position: relative;
+  min-height: 60vh;
+  box-sizing: border-box;
 }
 .hero .overlay {
   position: absolute;
@@ -16,12 +42,51 @@
   position: relative;
   z-index: 1;
 }
-
+.section {
+  padding: 4rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+.section.dark {
+  background: #f4f4f4;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
 .card i {
   margin-bottom: 0.5rem;
   color: #0a74da;
 }
-
+.btn {
+  background: #0a74da;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+}
+form input, form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
 .carousel {
   overflow: hidden;
   position: relative;
@@ -37,12 +102,21 @@
   text-align: center;
 }
 .carousel-slide img {
-  width: 100%;
+  width: 30%;
+  height: auto;
   border-radius: 8px;
   margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-300%); }
+}
+footer {
+  background: #0a74da;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
 }
