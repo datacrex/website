@@ -23,7 +23,7 @@ header nav a {
   text-decoration: none;
 }
 .hero {
-  background: url('images/hero-background.jpg') no-repeat center center/cover;
+  background: url('hero-background.jpg') no-repeat center center/cover;
   color: white;
   padding: 6rem 1rem;
   text-align: center;
