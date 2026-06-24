@@ -1,106 +1,312 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DATACREX - Software Solutions</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DATACREX builds reliable, scalable software — web & mobile apps, AI automation, and cloud solutions for startups and enterprises." />
+  <meta name="theme-color" content="#060914" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="DATACREX — Reliable & Scalable Software Solutions" />
+  <meta property="og:description" content="We help startups and enterprises bring ideas to life with powerful technology." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.datacrex.com" />
+
+  <title>DATACREX — Software Solutions</title>
+
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <link rel="apple-touch-icon" href="logo.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>DATACREX</h1>
-      <nav>
+  <!-- Animated background -->
+  <div class="bg-aurora" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container nav-bar">
+      <a href="#hero" class="logo">
+        <span class="logo-mark"><img src="logo.svg" alt="DATACREX logo" width="36" height="36" /></span>
+        <span>DATA<span class="logo-accent">CREX</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
         <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
         <a href="#about">About</a>
+        <a href="#work">Work</a>
         <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-sm nav-cta">Get in Touch</a>
       </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="overlay"></div>
-    <div class="container">
-      <h2>Reliable & Scalable Software Solutions</h2>
-      <p>We help startups and enterprises bring their ideas to life with powerful technology.</p>
-      <a href="#contact" class="btn">Get in Touch</a>
-    </div>
-  </section>
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="container hero-inner">
+        <span class="pill reveal" data-reveal>
+          <span class="pulse-dot"></span> Available for new projects — 2026
+        </span>
+        <h1 class="reveal" data-reveal>
+          Reliable & scalable<br />
+          <span class="gradient-text">software solutions</span>
+        </h1>
+        <p class="hero-sub reveal" data-reveal>
+          We help startups and enterprises turn ambitious ideas into powerful,
+          production-ready products — web, mobile, AI, and everything in between.
+        </p>
+        <div class="hero-actions reveal" data-reveal>
+          <a href="#contact" class="btn btn-lg">Start a project <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#work" class="btn btn-ghost btn-lg">View our work</a>
+        </div>
 
-  <section id="services" class="section">
-    <div class="container">
-      <h3>Our Services</h3>
-      <div class="grid">
-        <div class="card">
-          <i class="fas fa-code fa-2x"></i>
-          <h4>Web Development</h4>
-          <p>Modern websites & web apps using React, FastAPI, Django, and more.</p>
-        </div>
-        <div class="card">
-          <i class="fas fa-mobile-alt fa-2x"></i>
-          <h4>Mobile Apps</h4>
-          <p>Cross-platform mobile apps using React Native and Flutter.</p>
-        </div>
-        <div class="card">
-          <i class="fas fa-robot fa-2x"></i>
-          <h4>AI & Automation</h4>
-          <p>Custom AI solutions and workflow automation tailored for your business.</p>
+        <div class="hero-stats reveal" data-reveal>
+          <div class="stat">
+            <span class="stat-num" data-count="50" data-suffix="+">0</span>
+            <span class="stat-label">Projects delivered</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="98" data-suffix="%">0</span>
+            <span class="stat-label">Client satisfaction</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="12" data-suffix="+">0</span>
+            <span class="stat-label">Industries served</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- Tech marquee -->
+    <section class="marquee-wrap" aria-label="Technologies we use">
+      <div class="marquee">
+        <div class="marquee-track">
+          <span>React</span><span>FastAPI</span><span>Django</span><span>Flutter</span>
+          <span>React Native</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span>
+          <span>Vue.js</span><span>Docker</span><span>TensorFlow</span><span>WebSockets</span>
+          <!-- duplicate for seamless loop -->
+          <span>React</span><span>FastAPI</span><span>Django</span><span>Flutter</span>
+          <span>React Native</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span>
+          <span>Vue.js</span><span>Docker</span><span>TensorFlow</span><span>WebSockets</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <span class="eyebrow">What we do</span>
+          <h2>Services built to <span class="gradient-text">scale with you</span></h2>
+          <p class="section-lead">From first line of code to global launch, we cover the full product lifecycle.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card reveal" data-reveal>
+            <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Web Development</h3>
+            <p>Modern websites & web apps engineered with React, FastAPI, Django and more — fast, secure, and built to last.</p>
+            <ul class="card-list">
+              <li>Responsive & accessible</li>
+              <li>API-first architecture</li>
+              <li>SEO optimized</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" data-reveal>
+            <div class="card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3>Mobile Apps</h3>
+            <p>Cross-platform mobile apps with React Native and Flutter — one codebase, native experience on iOS and Android.</p>
+            <ul class="card-list">
+              <li>iOS & Android</li>
+              <li>Offline-first</li>
+              <li>App Store delivery</li>
+            </ul>
+          </article>
+
+          <article class="card reveal" data-reveal>
+            <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+            <h3>AI & Automation</h3>
+            <p>Custom AI solutions and workflow automation tailored to your business — from intelligent assistants to data pipelines.</p>
+            <ul class="card-list">
+              <li>LLM integrations</li>
+              <li>Process automation</li>
+              <li>Predictive analytics</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
     <section id="about" class="section">
-    <div class="container">
-      <h3>About Us</h3>
-      <p>We're a team of passionate developers, designers, and problem solvers helping businesses scale with technology. Our core values are reliability, transparency, and innovation.</p>
-    </div>
-  </section>
+      <div class="container about-grid">
+        <div class="reveal" data-reveal>
+          <span class="eyebrow">Who we are</span>
+          <h2>A team that ships <span class="gradient-text">with intent</span></h2>
+          <p class="section-lead">
+            We're a team of passionate developers, designers, and problem solvers helping
+            businesses scale with technology. Reliability, transparency, and innovation
+            aren't buzzwords for us — they're how we work, every day.
+          </p>
+          <div class="value-list">
+            <div class="value"><i class="fa-solid fa-shield-halved"></i><div><strong>Reliability</strong><span>Code you can trust in production.</span></div></div>
+            <div class="value"><i class="fa-solid fa-eye"></i><div><strong>Transparency</strong><span>Clear communication, no surprises.</span></div></div>
+            <div class="value"><i class="fa-solid fa-lightbulb"></i><div><strong>Innovation</strong><span>Modern tools, pragmatic choices.</span></div></div>
+          </div>
+        </div>
 
-  <section id="portfolio" class="section dark">
-    <div class="container">
-      <h3>Recent Projects</h3>
-      <div class="carousel">
-        <div class="carousel-track">
-          <div class="carousel-slide">
-            <img src="ecommerce.jpg" alt="E-Commerce App">
-            <h4>E-Commerce App</h4>
-            <p>Scalable online store built with FastAPI and Vue.js.</p>
-          </div>
-          <div class="carousel-slide">
-            <img src="healthcare.jpg" alt="Healthcare Platform">
-            <h4>Healthcare Staffing Platform</h4>
-            <p>Robust Django-based platform with complex scheduling logic.</p>
-          </div>
-          <div class="carousel-slide">
-            <img src="trading.jpg" alt="Trading Automation">
-            <h4>Trading Automation System</h4>
-            <p>Algo-trading platform integrated with real-time APIs and WebSockets.</p>
+        <div class="about-visual reveal" data-reveal>
+          <div class="glass-panel">
+            <div class="panel-row"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <pre class="code-block"><code><span class="c-key">const</span> <span class="c-var">datacrex</span> = {
+  <span class="c-prop">mission</span>: <span class="c-str">'build great software'</span>,
+  <span class="c-prop">stack</span>: [<span class="c-str">'React'</span>, <span class="c-str">'FastAPI'</span>, <span class="c-str">'AI'</span>],
+  <span class="c-prop">delivery</span>: <span class="c-str">'on time'</span>,
+  <span class="c-prop">quality</span>: <span class="c-num">100</span>,
+};
+
+<span class="c-var">datacrex</span>.<span class="c-fn">ship</span>(<span class="c-str">'your-idea'</span>);</code></pre>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- Work / Portfolio -->
+    <section id="work" class="section">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <span class="eyebrow">Selected work</span>
+          <h2>Recent <span class="gradient-text">projects</span></h2>
+          <p class="section-lead">A glimpse of products we've designed, built, and scaled.</p>
+        </div>
 
+        <div class="grid grid-3 work-grid">
+          <article class="work-card reveal" data-reveal>
+            <div class="work-media">
+              <img src="ecommerce.jpg" alt="E-Commerce App" loading="lazy" />
+              <span class="work-tag">E-Commerce</span>
+            </div>
+            <div class="work-body">
+              <h3>E-Commerce App</h3>
+              <p>Scalable online store built with FastAPI and Vue.js, handling thousands of daily orders.</p>
+              <div class="work-stack"><span>FastAPI</span><span>Vue.js</span><span>PostgreSQL</span></div>
+            </div>
+          </article>
 
-  <section id="contact" class="section dark">
-    <div class="container">
-      <h3>Contact Us</h3>
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required/>
-        <input type="email" name="email" placeholder="Your Email" required/>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </div>
-  </section>
+          <article class="work-card reveal" data-reveal>
+            <div class="work-media">
+              <img src="healthcare.jpg" alt="Healthcare Staffing Platform" loading="lazy" />
+              <span class="work-tag">Healthcare</span>
+            </div>
+            <div class="work-body">
+              <h3>Healthcare Staffing Platform</h3>
+              <p>Robust Django platform with complex scheduling logic and real-time availability.</p>
+              <div class="work-stack"><span>Django</span><span>Celery</span><span>Redis</span></div>
+            </div>
+          </article>
 
+          <article class="work-card reveal" data-reveal>
+            <div class="work-media">
+              <img src="trading.jpg" alt="Trading Automation System" loading="lazy" />
+              <span class="work-tag">FinTech</span>
+            </div>
+            <div class="work-body">
+              <h3>Trading Automation System</h3>
+              <p>Algo-trading platform integrated with real-time APIs and WebSockets for low-latency execution.</p>
+              <div class="work-stack"><span>Python</span><span>WebSockets</span><span>AWS</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner reveal" data-reveal>
+          <div class="cta-glow" aria-hidden="true"></div>
+          <h2>Have an idea? Let's build it.</h2>
+          <p>Tell us what you're working on and we'll get back within one business day.</p>
+          <a href="#contact" class="btn btn-lg">Get in Touch <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div class="reveal" data-reveal>
+          <span class="eyebrow">Get in touch</span>
+          <h2>Let's start a <span class="gradient-text">conversation</span></h2>
+          <p class="section-lead">Whether it's a quick question or a full product build, we'd love to hear from you.</p>
+          <ul class="contact-info">
+            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:contact@datacrex.com">contact@datacrex.com</a></li>
+            <li><i class="fa-solid fa-globe"></i> www.datacrex.com</li>
+            <li><i class="fa-solid fa-clock"></i> We reply within 1 business day</li>
+          </ul>
+        </div>
+
+        <form class="contact-form reveal" data-reveal action="https://formspree.io/f/your-form-id" method="POST">
+          <div class="field">
+            <input type="text" name="name" id="name" placeholder=" " required />
+            <label for="name">Your Name</label>
+          </div>
+          <div class="field">
+            <input type="email" name="email" id="email" placeholder=" " required />
+            <label for="email">Your Email</label>
+          </div>
+          <div class="field">
+            <textarea name="message" id="message" rows="5" placeholder=" " required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          <button type="submit" class="btn btn-lg btn-block">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 DATACREX. All rights reserved.</p>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">
+          <span class="logo-mark"><img src="logo.svg" alt="DATACREX logo" width="36" height="36" /></span>
+          <span>DATA<span class="logo-accent">CREX</span></span>
+        </a>
+        <p>Reliable & scalable software solutions for the businesses of tomorrow.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="#" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2026</span> DATACREX. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
