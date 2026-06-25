@@ -8,20 +8,25 @@
   const toggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
 
-  function closeNav() {
-    navLinks.classList.remove('open');
-    toggle.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
+  function setNav(open) {
+    navLinks.classList.toggle('open', open);
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    // lock page scroll behind the overlay menu
+    document.body.style.overflow = open ? 'hidden' : '';
   }
+  function closeNav() { setNav(false); }
 
   if (toggle && navLinks) {
     toggle.addEventListener('click', function () {
-      const open = navLinks.classList.toggle('open');
-      toggle.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', String(open));
+      setNav(!navLinks.classList.contains('open'));
     });
     navLinks.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', closeNav);
+    });
+    // close the menu if the viewport grows back to desktop
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 860) closeNav();
     });
   }
 
@@ -55,13 +60,15 @@
   function animateCount(el) {
     const target = parseFloat(el.getAttribute('data-count'));
     const suffix = el.getAttribute('data-suffix') || '';
+    const decimals = Number.isInteger(target) ? 0 : 1;
     const duration = 1600;
     const start = performance.now();
 
     function tick(now) {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-      el.textContent = Math.round(target * eased) + suffix;
+      const value = (target * eased).toFixed(decimals);
+      el.textContent = value + suffix;
       if (progress < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
