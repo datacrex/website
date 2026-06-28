@@ -122,6 +122,25 @@
     spySections.forEach(function (s) { navObserver.observe(s); });
   }
 
+  /* --- Randomize the home "Latest from the blog" section to a random 3 --- */
+  (function () {
+    const grid = document.getElementById('homeBlogGrid');
+    if (!grid) return;
+    const cards = Array.prototype.slice.call(grid.querySelectorAll('.post-card'));
+    const SHOW = 3;
+    if (cards.length <= SHOW) return;
+    // Fisher–Yates shuffle of indices, then hide all but the first SHOW
+    const order = cards.map(function (_, i) { return i; });
+    for (let i = order.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = order[i]; order[i] = order[j]; order[j] = tmp;
+    }
+    const keep = order.slice(0, SHOW);
+    cards.forEach(function (card, i) {
+      if (keep.indexOf(i) === -1) card.style.display = 'none';
+    });
+  })();
+
   /* --- Footer year --- */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
