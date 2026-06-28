@@ -924,6 +924,136 @@ footer {
 .faq-a p { color: var(--text-muted); margin: 0; font-size: 0.96rem; line-height: 1.6; }
 
 /* ============================================================
+   Sub-page hero + breadcrumb
+   ============================================================ */
+.page-hero {
+  padding: 9.5rem 0 3.5rem;
+  text-align: center;
+}
+.crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+}
+.crumb a { color: var(--text-muted); transition: color 0.2s; }
+.crumb a:hover { color: var(--accent-2); }
+.page-hero h1 {
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  overflow-wrap: break-word;
+}
+.page-hero p {
+  color: var(--text-muted);
+  max-width: 660px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* ============================================================
+   Blog listing
+   ============================================================ */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 1.6rem;
+}
+.post-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+  transition: transform 0.35s var(--ease), border-color 0.35s;
+}
+.post-card:hover { transform: translateY(-6px); border-color: var(--border-strong); }
+.post-thumb {
+  aspect-ratio: 16 / 8;
+  display: grid;
+  place-items: center;
+  font-size: 2.4rem;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(45, 84, 240, 0.55), rgba(4, 198, 248, 0.45));
+  border-bottom: 1px solid var(--border);
+}
+.post-thumb.alt { background: linear-gradient(135deg, rgba(13, 126, 247, 0.5), rgba(67, 112, 239, 0.45)); }
+.post-thumb.alt2 { background: linear-gradient(135deg, rgba(4, 198, 248, 0.45), rgba(45, 84, 240, 0.5)); }
+.post-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+.post-meta { font-size: 0.8rem; color: var(--text-dim); display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.post-meta .post-cat { color: var(--accent-2); font-weight: 600; }
+.post-card h2, .post-card h3 { font-size: 1.22rem; line-height: 1.3; }
+.post-card p { color: var(--text-muted); font-size: 0.95rem; margin: 0; flex: 1; }
+.post-card .read { color: var(--accent-2); font-weight: 600; font-size: 0.9rem; margin-top: 0.3rem; }
+
+/* ============================================================
+   Article (blog post body)
+   ============================================================ */
+.article { max-width: 760px; margin: 0 auto; }
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+  align-items: center;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-bottom: 2.2rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--border);
+}
+.article-meta .post-cat { color: var(--accent-2); font-weight: 600; }
+.prose { color: var(--text-muted); font-size: 1.06rem; line-height: 1.8; }
+.prose > p:first-of-type { font-size: 1.18rem; color: var(--text); }
+.prose h2 { color: var(--text); font-size: 1.55rem; margin: 2.6rem 0 1rem; }
+.prose h3 { color: var(--text); font-size: 1.2rem; margin: 2rem 0 0.7rem; }
+.prose p { margin: 0 0 1.2rem; }
+.prose ul, .prose ol { margin: 0 0 1.3rem; padding-left: 1.35rem; }
+.prose li { margin-bottom: 0.5rem; }
+.prose a { color: var(--accent-2); text-decoration: underline; text-underline-offset: 3px; }
+.prose strong { color: var(--text); }
+.prose blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.2rem 0 0.2rem 1.3rem;
+  margin: 1.6rem 0;
+  color: var(--text);
+  font-style: italic;
+}
+.prose code {
+  background: var(--surface-strong);
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  font-family: 'SF Mono', ui-monospace, monospace;
+  font-size: 0.88em;
+}
+.prose pre {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.3rem;
+  overflow-x: auto;
+  margin: 0 0 1.4rem;
+}
+.prose pre code { background: none; padding: 0; font-size: 0.9rem; line-height: 1.7; }
+.article-cta {
+  margin-top: 2.6rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ============================================================
    Reveal on scroll
    ============================================================ */
 .reveal {
@@ -980,6 +1110,7 @@ footer {
   .hero-actions .btn { width: 100%; }
   .hero-trust { gap: 0.55rem; }
   .grid-2 { grid-template-columns: 1fr; }
+  .page-hero { padding: 8rem 0 2.6rem; }
 
   .stats-grid { padding: 1.8rem 1.2rem; gap: 1.6rem 1rem; }
   .kpi { gap: 1.3rem 1.1rem; }

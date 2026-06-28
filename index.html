@@ -11,8 +11,8 @@
   <meta name="theme-color" content="#08081c" />
   <link rel="canonical" href="https://www.datacrex.com/" />
 
-  <link rel="icon" type="image/svg+xml" href="logo.svg" />
-  <link rel="apple-touch-icon" href="logo.svg" />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <link rel="apple-touch-icon" href="/logo.svg" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="DATACREX — AI, Data Engineering &amp; Custom Software Development" />
@@ -36,7 +36,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -116,19 +116,18 @@
   <!-- Header -->
   <header id="header">
     <div class="container nav-bar">
-      <a href="#hero" class="logo">
-        <span class="logo-mark"><img src="logo.svg" alt="DATACREX logo" width="36" height="36" /></span>
+      <a href="/" class="logo">
+        <span class="logo-mark"><img src="/logo.svg" alt="DATACREX logo" width="36" height="36" /></span>
         <span>DATA<span class="logo-accent">CREX</span></span>
       </a>
 
       <nav class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#why">Why us</a>
-        <a href="#industries">Industries</a>
-        <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact" class="btn btn-sm nav-cta">Book a call</a>
+        <a href="/about/">About</a>
+        <a href="/services/">Services</a>
+        <a href="/work/">Work</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact/">Contact</a>
+        <a href="/contact/" class="btn btn-sm nav-cta">Book a call</a>
       </nav>
 
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -262,6 +261,9 @@
             <p>Embed senior engineers, data scientists, and product designers into your org — scaled up or down as your roadmap demands.</p>
             <div class="tags"><span>Staff aug</span><span>Pods</span><span>Managed</span></div>
           </article>
+        </div>
+        <div class="reveal" data-reveal style="text-align:center;margin-top:2.6rem">
+          <a href="/services/" class="btn btn-ghost">Explore all services <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
@@ -419,7 +421,7 @@
         <div class="grid grid-3 work-grid">
           <article class="work-card reveal" data-reveal>
             <div class="work-media">
-              <img src="ecommerce.jpg" alt="E-commerce web app built by DATACREX with FastAPI and Vue.js" width="800" height="800" loading="lazy" />
+              <img src="/ecommerce.jpg" alt="E-commerce web app built by DATACREX with FastAPI and Vue.js" width="800" height="800" loading="lazy" />
               <span class="work-tag">E-Commerce</span>
             </div>
             <div class="work-body">
@@ -431,7 +433,7 @@
 
           <article class="work-card reveal" data-reveal>
             <div class="work-media">
-              <img src="healthcare.jpg" alt="Healthcare staffing platform built by DATACREX with Django" width="800" height="800" loading="lazy" />
+              <img src="/healthcare.jpg" alt="Healthcare staffing platform built by DATACREX with Django" width="800" height="800" loading="lazy" />
               <span class="work-tag">Healthcare</span>
             </div>
             <div class="work-body">
@@ -443,7 +445,7 @@
 
           <article class="work-card reveal" data-reveal>
             <div class="work-media">
-              <img src="trading.jpg" alt="Algorithmic trading automation system built by DATACREX with Python and WebSockets" width="800" height="800" loading="lazy" />
+              <img src="/trading.jpg" alt="Algorithmic trading automation system built by DATACREX with Python and WebSockets" width="800" height="800" loading="lazy" />
               <span class="work-tag">FinTech</span>
             </div>
             <div class="work-body">
@@ -452,6 +454,9 @@
               <div class="work-stack"><span>Python</span><span>WebSockets</span><span>AWS</span></div>
             </div>
           </article>
+        </div>
+        <div class="reveal" data-reveal style="text-align:center;margin-top:2.6rem">
+          <a href="/work/" class="btn btn-ghost">See more of our work <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
@@ -489,6 +494,49 @@
             <summary>How do you keep us informed?<i class="fa-solid fa-chevron-down"></i></summary>
             <div class="faq-a"><p>Weekly demos, live progress, and clear milestones. You'll always know exactly where things stand — no black boxes.</p></div>
           </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest from the blog -->
+    <section id="blog" class="section">
+      <div class="container">
+        <div class="section-head reveal" data-reveal>
+          <span class="eyebrow">Insights</span>
+          <h2>Latest from the <span class="gradient-text">blog</span></h2>
+          <p class="section-lead">Practical, no-fluff articles from the team that builds production systems for a living.</p>
+        </div>
+        <div class="blog-grid">
+          <a class="post-card reveal" data-reveal href="/blog/building-production-rag-systems/">
+            <div class="post-thumb"><i class="fa-solid fa-robot"></i></div>
+            <div class="post-body">
+              <div class="post-meta"><span class="post-cat">AI</span><span>·</span><span>8 min read</span></div>
+              <h3>Building Production-Ready RAG Systems: A Practical Guide</h3>
+              <p>Most RAG demos break in production. Here's how we design retrieval-augmented systems that stay accurate, fast, and trustworthy at scale.</p>
+              <span class="read">Read article →</span>
+            </div>
+          </a>
+          <a class="post-card reveal" data-reveal href="/blog/data-engineering-for-ai/">
+            <div class="post-thumb alt"><i class="fa-solid fa-database"></i></div>
+            <div class="post-body">
+              <div class="post-meta"><span class="post-cat">Data</span><span>·</span><span>7 min read</span></div>
+              <h3>Data Engineering for AI: Building a Modern Lakehouse</h3>
+              <p>AI is only as good as the data behind it. A practical look at the lakehouse architecture that makes your data trustworthy and AI-ready.</p>
+              <span class="read">Read article →</span>
+            </div>
+          </a>
+          <a class="post-card reveal" data-reveal href="/blog/choosing-an-engagement-model/">
+            <div class="post-thumb alt2"><i class="fa-solid fa-handshake"></i></div>
+            <div class="post-body">
+              <div class="post-meta"><span class="post-cat">Delivery</span><span>·</span><span>6 min read</span></div>
+              <h3>Fixed-Price vs Dedicated Team: Choosing the Right Engagement Model</h3>
+              <p>Should you scope a fixed project or embed a dedicated team? A clear framework for picking the model that fits your stage and budget.</p>
+              <span class="read">Read article →</span>
+            </div>
+          </a>
+        </div>
+        <div class="reveal" data-reveal style="text-align:center;margin-top:2.6rem">
+          <a href="/blog/" class="btn btn-ghost">View all articles <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </section>
@@ -578,8 +626,8 @@
     <div class="container">
       <div class="footer-cols">
         <div class="footer-col footer-brand">
-          <a href="#hero" class="logo">
-            <span class="logo-mark"><img src="logo.svg" alt="DATACREX logo" width="36" height="36" /></span>
+          <a href="/" class="logo">
+            <span class="logo-mark"><img src="/logo.svg" alt="DATACREX logo" width="36" height="36" /></span>
             <span>DATA<span class="logo-accent">CREX</span></span>
           </a>
           <p>DATACREX Technologies Private Limited — your engineering partner for production-grade AI, data, and software.</p>
@@ -592,23 +640,20 @@
         <div class="footer-col">
           <h4>Services</h4>
           <ul>
-            <li><a href="#services">Agentic &amp; Generative AI</a></li>
-            <li><a href="#services">Data Engineering</a></li>
-            <li><a href="#services">Custom Software</a></li>
-            <li><a href="#services">Cloud &amp; DevSecOps</a></li>
-            <li><a href="#services">Dedicated Teams</a></li>
+            <li><a href="/services/#ai">Agentic &amp; Generative AI</a></li>
+            <li><a href="/services/#data">Data Engineering</a></li>
+            <li><a href="/services/#software">Custom Software</a></li>
+            <li><a href="/services/#cloud">Cloud &amp; DevSecOps</a></li>
+            <li><a href="/services/#teams">Dedicated Teams</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#why">Why us</a></li>
-            <li><a href="#engagements">Engagement models</a></li>
-            <li><a href="#industries">Industries</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/work/">Work</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -622,11 +667,11 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; <span id="year">2026</span> DATACREX Technologies Private Limited. All rights reserved.</span>
-        <span><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a></span>
+        <span><a href="/contact/">Contact</a> &nbsp;·&nbsp; <a href="/blog/">Blog</a></span>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>

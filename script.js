@@ -87,24 +87,39 @@
     counters.forEach(animateCount);
   }
 
-  /* --- Active nav link highlighting --- */
-  const sections = document.querySelectorAll('section[id]');
+  /* --- Active nav link highlighting (scrollspy) --- */
+  // Derive a section key from a nav href: "/services.html" -> "services",
+  // "/blog/" -> "blog", "/" -> null. Lets the page-based nav highlight the
+  // matching section as you scroll the home page.
+  function sectionKeyFromHref(href) {
+    if (!href || href === '/' || href.charAt(0) === '#') return null;
+    var file = href.split('/').pop();
+    if (file && file.indexOf('.html') !== -1) return file.replace('.html', '');
+    var parts = href.split('/').filter(Boolean);
+    return parts.length ? parts[parts.length - 1] : null;
+  }
   const linkMap = {};
-  document.querySelectorAll('.nav-links a[href^="#"]').forEach(function (a) {
-    linkMap[a.getAttribute('href').slice(1)] = a;
+  document.querySelectorAll('.nav-links a:not(.btn)').forEach(function (a) {
+    const key = sectionKeyFromHref(a.getAttribute('href'));
+    if (key) linkMap[key] = a;
   });
-  if ('IntersectionObserver' in window) {
+  // Only spy on sections that correspond to a nav link (so sub-pages, which
+  // keep their server-rendered .active class, are left untouched).
+  const spySections = [];
+  document.querySelectorAll('section[id]').forEach(function (s) {
+    if (linkMap[s.id]) spySections.push(s);
+  });
+  if ('IntersectionObserver' in window && spySections.length) {
     const navObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
         const link = linkMap[entry.target.id];
         if (!link) return;
-        if (entry.isIntersecting) {
-          Object.values(linkMap).forEach(function (l) { l.classList.remove('active'); });
-          link.classList.add('active');
-        }
+        Object.keys(linkMap).forEach(function (k) { linkMap[k].classList.remove('active'); });
+        link.classList.add('active');
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    sections.forEach(function (s) { navObserver.observe(s); });
+    spySections.forEach(function (s) { navObserver.observe(s); });
   }
 
   /* --- Footer year --- */
