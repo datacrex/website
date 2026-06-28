@@ -125,4 +125,46 @@
   /* --- Footer year --- */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* --- Contact form (Web3Forms AJAX, inline success) --- */
+  document.querySelectorAll('.contact-form').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const result = form.querySelector('.form-result');
+      const original = btn ? btn.innerHTML : '';
+      if (btn) { btn.disabled = true; btn.innerHTML = 'Sending…'; }
+      if (result) { result.style.display = 'none'; result.className = 'form-result'; }
+
+      const payload = JSON.stringify(Object.fromEntries(new FormData(form).entries()));
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: payload
+      })
+        .then(function (r) { return r.json().then(function (data) { return { ok: r.ok, data: data }; }); })
+        .then(function (res) {
+          if (res.ok && res.data.success) {
+            form.reset();
+            if (result) {
+              result.textContent = "✅ Thanks — your message is on its way. We'll reply within one business day.";
+              result.classList.add('success');
+              result.style.display = 'block';
+            }
+          } else {
+            throw new Error((res.data && res.data.message) || 'submit failed');
+          }
+        })
+        .catch(function () {
+          if (result) {
+            result.textContent = '⚠ Something went wrong. Please email contact@datacrex.com directly.';
+            result.classList.add('error');
+            result.style.display = 'block';
+          }
+        })
+        .then(function () {
+          if (btn) { btn.disabled = false; btn.innerHTML = original; }
+        });
+    });
+  });
 })();

@@ -647,6 +647,18 @@ img { max-width: 100%; display: block; }
 }
 .contact-form .btn { margin-top: 1.4rem; }
 .form-note { color: var(--text-dim); font-size: 0.82rem; text-align: center; margin: 0.9rem 0 0; }
+.hp-field { display: none !important; }
+.form-result {
+  display: none;
+  margin: 1.1rem 0 0;
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  border: 1px solid var(--border);
+}
+.form-result.success { background: rgba(34, 211, 167, 0.12); border-color: rgba(34, 211, 167, 0.45); color: #7ef0cd; }
+.form-result.error { background: rgba(255, 95, 87, 0.12); border-color: rgba(255, 95, 87, 0.45); color: #ff9b95; }
 
 /* ============================================================
    Footer

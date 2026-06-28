@@ -93,7 +93,11 @@
           </ul>
         </div>
 
-        <form class="contact-form reveal" data-reveal action="https://formspree.io/f/your-form-id" method="POST">
+        <form class="contact-form reveal" data-reveal action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="09695f4c-a2e4-49ce-808c-e86ba3b6c58a" />
+          <input type="hidden" name="subject" value="New enquiry from datacrex.com" />
+          <input type="hidden" name="from_name" value="DATACREX Website" />
+          <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="form-grid">
             <div class="field">
               <label for="name">Full name *</label>
@@ -103,12 +107,8 @@
               <label for="email">Work email *</label>
               <input type="email" name="email" id="email" placeholder="jane@company.com" required />
             </div>
-            <div class="field">
-              <label for="company">Company</label>
-              <input type="text" name="company" id="company" placeholder="Company name" />
-            </div>
-            <div class="field">
-              <label for="phone">Phone</label>
+            <div class="field full">
+              <label for="phone">Phone (optional)</label>
               <input type="tel" name="phone" id="phone" placeholder="+91 00000 00000" />
             </div>
             <div class="field full">
@@ -124,22 +124,12 @@
               </select>
             </div>
             <div class="field full">
-              <label for="budget">Estimated budget</label>
-              <select id="budget" name="budget">
-                <option value="">Select a range…</option>
-                <option>Under $10k</option>
-                <option>$10k – $50k</option>
-                <option>$50k – $150k</option>
-                <option>$150k+</option>
-                <option>Ongoing / monthly</option>
-              </select>
-            </div>
-            <div class="field full">
               <label for="message">Tell us about your project *</label>
               <textarea name="message" id="message" rows="4" placeholder="What are you trying to achieve, and by when?" required></textarea>
             </div>
           </div>
           <button type="submit" class="btn btn-lg btn-block">Send message <i class="fa-solid fa-paper-plane"></i></button>
+          <div class="form-result" role="status" aria-live="polite"></div>
           <p class="form-note">We respect your privacy. Your details are never shared.</p>
         </form>
       </div>
